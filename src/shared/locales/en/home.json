@@ -1,3 +1,10 @@
 {
-  "homeEN": {}
+  "homeEN": {
+    "home": "Home",
+    "institutional": "Institutional",
+    "projects": "Projects",
+    "clients": "Clients",
+    "news": "News",
+    "contact": "Contact"
+  }
 }

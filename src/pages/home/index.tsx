@@ -1,11 +1,5 @@
-import { Template } from '@src/shared/components/layout'
-
 const Home = () => {
-  return (
-    <Template>
-      <h1>Hello world</h1>
-    </Template>
-  )
+  return <h1>Hello Home</h1>
 }
 
 export default Home

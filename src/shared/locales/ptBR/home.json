@@ -1,3 +1,10 @@
 {
-  "homePT": {}
+  "homePT": {
+    "home": "Home",
+    "institutional": "Institucional",
+    "projects": "Projetos",
+    "clients": "Clientes",
+    "news": "Noticias",
+    "contact": "Contato"
+  }
 }
