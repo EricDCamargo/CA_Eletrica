@@ -23,7 +23,7 @@ export const NavBar = () => {
   return (
     <Container>
       <Logo onClick={() => navigate('/home')}>
-        <SvgRender src={newLogo} height="80px" width="185px" />
+        <SvgRender src={newLogo} />
       </Logo>
       <Sections>
         <Section
@@ -119,7 +119,7 @@ const Container = styled.div`
     height: 70px;
     align-items: center;
     background-color: ${colors.black};
-    width: 100%;
+
     position: fixed;
     top: 0;
   }
@@ -158,12 +158,11 @@ const Section = styled.a<{ active: boolean }>`
   background-color: ${colors.black};
   cursor: pointer;
 
-  ${props =>
-    props.active &&
-    `color: ${colors.yellow} border-bottom: 2px solid ${colors.yellow}`}
-
   @media (max-width: 1000px) {
     font-size: 22px;
+  }
+  @media (max-width: 1100px) {
+    width: 100%;
   }
 `
 const Links = styled.div`

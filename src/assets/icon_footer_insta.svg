@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="31.244" height="31.232" viewBox="0 0 31.244 31.232">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffd600"/>
+      <stop offset="0.527" stop-color="#ff0095"/>
+      <stop offset="0.58" stop-color="#f2069c"/>
+      <stop offset="0.679" stop-color="#cf14b0"/>
+      <stop offset="0.813" stop-color="#962ccf"/>
+      <stop offset="0.975" stop-color="#494dfa"/>
+      <stop offset="0.995" stop-color="#3f51ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Grupo_372" data-name="Grupo 372" transform="translate(-1613.284 -5575.284)">
+    <path id="Caminho_182" data-name="Caminho 182" d="M31.245,15.615A15.619,15.619,0,0,1,16.134,31.223q-.255.009-.511.008t-.511-.008A15.619,15.619,0,1,1,31.245,15.615Zm0,0" transform="translate(1613.283 5575.284)" fill="url(#linear-gradient)"/>
+    <path id="Combined_shape_461" data-name="Combined shape 461" d="M12.136,16H5.863A3.868,3.868,0,0,1,2,12.137V5.863A3.868,3.868,0,0,1,5.863,2h6.273A3.867,3.867,0,0,1,16,5.863v6.274A3.868,3.868,0,0,1,12.136,16ZM5.863,3.242A2.624,2.624,0,0,0,3.242,5.863v6.274a2.624,2.624,0,0,0,2.621,2.621h6.273a2.624,2.624,0,0,0,2.621-2.621V5.863a2.624,2.624,0,0,0-2.621-2.621ZM9,12.607A3.607,3.607,0,1,1,12.607,9,3.612,3.612,0,0,1,9,12.607ZM9,6.635A2.365,2.365,0,1,0,11.365,9,2.368,2.368,0,0,0,9,6.635Zm3.758-.473a.912.912,0,1,1,.644-.267A.916.916,0,0,1,12.758,6.161Z" transform="translate(1620 5582)" fill="#fff"/>
+  </g>
+</svg>

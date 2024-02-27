@@ -5,6 +5,8 @@ import logo_2 from '@assets/logo_2.png'
 import translucidLogo_1 from '@assets/translucidLogo_1.svg'
 import translucidLogo_2 from '@assets/translucidLogo_2.svg'
 import newLogo from '@assets/new-logo.svg'
+import linkedinIco from '@assets/icon_footer_in.svg'
+import instagramIco from '@assets/icon_footer_insta.svg'
 
 export const SVGs = {
   usa,
@@ -13,5 +15,7 @@ export const SVGs = {
   logo_2,
   translucidLogo_1,
   translucidLogo_2,
-  newLogo
+  newLogo,
+  linkedinIco,
+  instagramIco
 }

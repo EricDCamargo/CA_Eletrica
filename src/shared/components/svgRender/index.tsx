@@ -17,19 +17,14 @@ export const SvgRender = ({ alt, src, height, width, onClick }: Props) => {
       onClick={onClick}
       src={src}
       alt={alt}
-      style={{ height: height, width: width, position: 'relative' }}
+      width={width}
+      height={height}
     />
   )
 }
 
-const Svg = styled.img`
-  height: 40rem;
-  @media (max-width: 425px) {
-    height: 100%;
-    width: 350px;
-  }
-  @media (max-width: 375px) {
-    height: 100%;
-    width: 300px;
-  }
+const Svg = styled.img<{ height?: string; width?: string }>`
+  position: 'relative';
+  height: ${props => (props.height ? props.height : 'fit-content')};
+  width: ${props => (props.width ? props.width : 'fit-content')};
 `
