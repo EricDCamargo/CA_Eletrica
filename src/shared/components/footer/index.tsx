@@ -1,5 +1,5 @@
 import { SVGs } from '@src/assets'
-import { SlEnvolopeLetter, SlPhone } from 'react-icons/sl'
+import { SlEnvolopeLetter, SlLocationPin, SlPhone } from 'react-icons/sl'
 import styled from 'styled-components'
 import { FooterBottom } from './footerBottom'
 import { useNavigate } from 'react-router-dom'
@@ -18,12 +18,7 @@ export const Footer = () => {
       <FooterBody>
         <MenuSection width="37.5%">
           <SvgRender src={newLogo} />
-          <span>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            quod iure dolor nihil minima assumenda tempora enim iusto quaerat
-            debitis sunt esse animi voluptates neque, architecto id dolore
-            provident minus!
-          </span>
+          <span>{t('home:footerText')}</span>
         </MenuSection>
         {size.width > 768 && (
           <MenuSection width="16.6%" marginLeft="10%">
@@ -39,17 +34,22 @@ export const Footer = () => {
           </MenuSection>
         )}
 
-        <MenuSection width="17.5%" marginLeft="2.5%">
-          <h3>Contatos</h3>
-          <span>
-            <SlEnvolopeLetter width="1.5vw" height="auto" /> Contato@gmail.com
+        <MenuSection width="20%" marginLeft="2%">
+          <h3>{t('home:contacts')}</h3>
+          <span className="contact">
+            <SlEnvolopeLetter className="contactIco" />
+            Contato@gmail.com
           </span>
-          <span>
-            <SlPhone width="1.5vw" height="auto" /> 15 99728-4066
+          <span className="contact">
+            <SlPhone className="contactIco" /> 15 99728-4066
+          </span>
+          <span className="contact">
+            <SlLocationPin className="contactIco" /> Rua Vinte e um de abril,
+            162 Residencial Salto Ville | CEP: 13323-431 São Paulo/SP
           </span>
         </MenuSection>
         <MenuSection width="12.5%" marginLeft="2.5%">
-          <h3>Redes sociais </h3>
+          <h3>{t('home:socialMedia')}</h3>
           <div className="mediaConteiner">
             <a>
               <img src={linkedinIco} />
@@ -68,13 +68,12 @@ export const Footer = () => {
 const FooterConteiner = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100vw;
+
+  width: 100%;
   @media (max-width: 690px) {
-    height: 50px;
     width: 100%;
     position: relative;
     z-index: 1;
-    bottom: 0;
   }
 `
 const FooterBody = styled.div`
@@ -119,6 +118,58 @@ const MenuSection = styled.div<{ width?: string; marginLeft?: string }>`
 
   .mediaConteiner {
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 2vw;
+  }
+  .mediaConteiner img {
+    width: 3vw;
+  }
+  .contact {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4vh;
+    gap: 5px;
+  }
+  .contactIco {
+    min-width: 1.5vw;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    text-align: center;
+    padding-bottom: 8vh;
+
+    h3 {
+      font-size: 5vw;
+    }
+    a,
+    span {
+      font-size: 3vw;
+    }
+    .svgRender {
+      width: 50vw;
+      margin-bottom: 2vh;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .contactIco {
+      width: 5vw;
+      margin-bottom: 1vw;
+    }
+    .mediaConteiner img {
+      width: 10vw;
+      object-fit: cover;
+    }
   }
 `

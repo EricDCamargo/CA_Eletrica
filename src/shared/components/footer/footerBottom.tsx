@@ -21,4 +21,12 @@ const FooterBrand = styled.div`
   padding: 4vh 8.33333vw;
   background-color: #23242b;
   justify-content: space-between;
+  font-size: 1.3vw;
+
+  @media (max-width: 440px) {
+    font-size: 3vw;
+    .svgRender {
+      height: 50px;
+    }
+  }
 `

@@ -13,45 +13,26 @@ export const Template = ({ children }: TemplateProps) => {
     <Grid>
       <NavBar />
       <Content>
-        <div className="pageCt">{children}</div> <Footer />
+        <div>{children}</div>
       </Content>
+      <Footer />
     </Grid>
   )
 }
 
 const Grid = styled.div`
-  display: grid;
-  background-color: ${colors.black};
-  grid-template-columns: 100%;
-  grid-template-rows: 120px auto;
-
-  grid-template-areas:
-    'NB'
-    'CT';
-  @media (max-width: 1000px) {
-    height: auto;
-
-    grid-template-areas:
-      'NB NB'
-      'CT CT';
-  }
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  width: 100vw;
+  background-color: ${colors.black};
+  justify-content: space-between;
 `
 
 const Content = styled.div`
-  grid-area: CT;
   display: flex;
   flex-direction: column;
-  grid-auto-flow: row;
-  grid-auto-rows: 25%;
-  grid-template-rows: unset;
-  overflow: auto;
-  overflow-x: hidden;
-  grid-template-columns: unset;
-  justify-content: space-between;
-
-  .pageCt {
-    padding: 24px 5.625%;
-  }
+  width: 100%;
+  height: 100%;
+  padding: 24px 5.625%;
 `

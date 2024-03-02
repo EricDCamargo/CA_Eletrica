@@ -102,16 +102,15 @@ export const NavBar = () => {
 }
 
 const Container = styled.div`
-  display: grid;
-  grid-area: NB;
+  display: flex;
   background-color: ${colors.black};
   z-index: 2;
   display: flex;
   align-items: center;
   padding: 0px 30px;
   justify-content: space-between;
+  min-height: 120px;
   width: 100%;
-  height: 100%;
 
   @media (max-width: 1000px) {
     background-color: #0a4f4f;
@@ -120,7 +119,6 @@ const Container = styled.div`
     align-items: center;
     background-color: ${colors.black};
 
-    position: fixed;
     top: 0;
   }
 `
