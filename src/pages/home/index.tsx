@@ -1,4 +1,4 @@
-import { Footer } from '@src/shared/components/footer'
+
 
 const Home = () => {
   return (
