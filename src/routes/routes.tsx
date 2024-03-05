@@ -9,7 +9,7 @@ import Contact from '@src/pages/contact'
 const AppRoutes = () => {
   return (
     <Routering>
-      <Route path="*" element={<Navigate to="/home" />} />
+      <Route path="*" element={<Navigate to="/home/" />} />
       <Route path="/home/" element={<Home />} />
       <Route path="/institutional/" element={<Institutional />} />
       <Route path="/projects/" element={<Projects />} />
