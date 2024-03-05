@@ -102,15 +102,15 @@ export const NavBar = () => {
 }
 
 const Container = styled.div`
-  display: flex;
+  display: grid;
+  grid-area: NB;
   background-color: ${colors.black};
   z-index: 2;
   display: flex;
-  align-items: center;
   padding: 0px 30px;
   justify-content: space-between;
-  min-height: 120px;
   width: 100%;
+  height: 100%;
 
   @media (max-width: 1000px) {
     background-color: #0a4f4f;
@@ -118,7 +118,8 @@ const Container = styled.div`
     height: 70px;
     align-items: center;
     background-color: ${colors.black};
-
+    width: 100%;
+    position: fixed;
     top: 0;
   }
 `
@@ -132,6 +133,7 @@ const Logo = styled.div`
 const Sections = styled.div`
   display: flex;
   column-gap: 20px;
+  align-items: center;
   font-family: 'Dosis', sans-serif;
   :hover {
     color: ${colors.black};

@@ -13,26 +13,44 @@ export const Template = ({ children }: TemplateProps) => {
     <Grid>
       <NavBar />
       <Content>
-        <div>{children}</div>
+        <div className='mainContent'>{children}</div><Footer />
       </Content>
-      <Footer />
+      
     </Grid>
   )
 }
 
 const Grid = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
+  display: grid;
   background-color: ${colors.black};
-  justify-content: space-between;
+  grid-template-columns: 100%;
+  grid-template-rows: 118px auto;
+  grid-template-areas:
+    'NB'
+    'CT';
+  @media (max-width: 1000px) {
+    height: auto;
+
+    grid-template-areas:
+      'NB NB'
+      'CT CT';
+  }
+  min-height: 100vh;
+  height: 100vh;
 `
 
 const Content = styled.div`
+  grid-area: CT;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  padding: 24px 5.625%;
+
+  grid-auto-flow: row;
+  grid-auto-rows: 25%;
+  grid-template-rows: unset;
+  overflow: auto;
+  grid-template-columns: unset;
+  .mainContent{
+
+    padding: 24px 5.625%;
+  }
 `
