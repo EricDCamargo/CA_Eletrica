@@ -6,20 +6,26 @@ import { useTranslation } from 'react-i18next'
 import { SiWhatsapp, SiGmail } from 'react-icons/si'
 import { SvgRender } from '../svgRender'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { Hamburguer } from '@src/components/hamburguer'
+import { RxHamburgerMenu } from 'react-icons/rx'
+import useWindowSize from '@shared/hooks/getWindowSize'
+import { useState } from 'react'
 
 export const NavBar = () => {
   const navigate = useNavigate()
   const location = useLocation()
+  const { i18n, t } = useTranslation()
+
   const { pathname } = location
+
   const { brazil, usa, newLogo } = SVGs
+  const size = useWindowSize()
   const gmail = 'ericdcamargo@gmail.com'
 
   const handleGmailIconClick = async () => {
     return (window.location.href = `mailto:${gmail}`)
   }
-
-  const { i18n, t } = useTranslation()
-
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   return (
     <Container>
       <Logo onClick={() => navigate('/home')}>
@@ -65,7 +71,7 @@ export const NavBar = () => {
       </Sections>
       <Links>
         <Icons>
-          <a href="https://contate.me/eric-camargo" target="_blank">
+          <a href="https://contate.me/eric- camargo" target="_blank">
             <SiWhatsapp size={22} className="icon iconWpp" />
           </a>
           <SiGmail
@@ -97,6 +103,18 @@ export const NavBar = () => {
           />
         </Icons>
       </Links>
+      {size.width < 1000 && (
+        <HamburguerMenuArea>
+          <RxHamburgerMenu
+            color={colors.white}
+            size={22}
+            onClick={() => setIsMenuOpen(state => !state)}
+          />
+        </HamburguerMenuArea>
+      )}
+      {isMenuOpen && size.width < 1000 && (
+        <Hamburguer setIsMenuOpen={setIsMenuOpen} />
+      )}
     </Container>
   )
 }
@@ -121,6 +139,9 @@ const Container = styled.div`
     width: 100%;
     position: fixed;
     top: 0;
+  }
+  @media (max-width: 425px) {
+    padding: 0px 15px;
   }
 `
 const Logo = styled.div`
@@ -203,4 +224,11 @@ const Icons = styled.div`
       color: ${colors.gmail};
     }
   }
+`
+const HamburguerMenuArea = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px 0px;
 `

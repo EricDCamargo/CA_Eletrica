@@ -13,9 +13,9 @@ export const Template = ({ children }: TemplateProps) => {
     <Grid>
       <NavBar />
       <Content>
-        <div className='mainContent'>{children}</div><Footer />
+        <div className="mainContent">{children}</div>
+        <Footer />
       </Content>
-      
     </Grid>
   )
 }
@@ -43,14 +43,13 @@ const Content = styled.div`
   grid-area: CT;
   display: flex;
   flex-direction: column;
-
+  justify-content: space-between;
   grid-auto-flow: row;
   grid-auto-rows: 25%;
   grid-template-rows: unset;
   overflow: auto;
   grid-template-columns: unset;
-  .mainContent{
-
+  .mainContent {
     padding: 24px 5.625%;
   }
 `
