@@ -1,6 +1,6 @@
 import { SVGs } from '@src/assets'
 import { colors } from '@src/shared/themes/colors'
-import { changeAppLanguage, smoothScroll } from '@src/shared/utils/functions'
+import { changeAppLanguage } from '@src/shared/utils/functions'
 import { Dispatch, SetStateAction } from 'react'
 import { useTranslation } from 'react-i18next'
 import { SiGmail, SiLinkedin, SiWhatsapp } from 'react-icons/si'
@@ -25,7 +25,7 @@ export const Hamburguer = ({ setIsMenuOpen }: Props) => {
     <HamburguerItems>
       <HamburguerDetail />
       <Section
-        onClick={e => {
+        onClick={() => {
           navigate('/home')
           setIsMenuOpen(false)
         }}
@@ -33,7 +33,7 @@ export const Hamburguer = ({ setIsMenuOpen }: Props) => {
         {t('home:home')}
       </Section>
       <Section
-        onClick={e => {
+        onClick={() => {
           navigate('/institutional')
           setIsMenuOpen(false)
         }}
@@ -41,7 +41,7 @@ export const Hamburguer = ({ setIsMenuOpen }: Props) => {
         {t('home:institutional')}
       </Section>
       <Section
-        onClick={e => {
+        onClick={() => {
           navigate('/projects')
           setIsMenuOpen(false)
         }}
@@ -49,7 +49,7 @@ export const Hamburguer = ({ setIsMenuOpen }: Props) => {
         {t('home:projects')}
       </Section>
       <Section
-        onClick={e => {
+        onClick={() => {
           navigate('/clients')
           setIsMenuOpen(false)
         }}
@@ -57,7 +57,7 @@ export const Hamburguer = ({ setIsMenuOpen }: Props) => {
         {t('home:clients')}
       </Section>
       <Section
-        onClick={e => {
+        onClick={() => {
           navigate('/news')
           setIsMenuOpen(false)
         }}
@@ -65,7 +65,7 @@ export const Hamburguer = ({ setIsMenuOpen }: Props) => {
         {t('home:news')}
       </Section>
       <Section
-        onClick={e => {
+        onClick={() => {
           navigate('/contact')
           setIsMenuOpen(false)
         }}
