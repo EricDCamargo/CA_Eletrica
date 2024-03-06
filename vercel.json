@@ -1,3 +1,0 @@
-{
-  "reweites": [{ "source": "/(.*)", "destination": "/home" }]
-}
