@@ -3,8 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 
+  //user is not allowed to select any content
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
   ::-webkit-scrollbar {
-    opacity: 0;
+    width: 0;
   }
 }
 
