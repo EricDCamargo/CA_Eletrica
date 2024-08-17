@@ -8,7 +8,7 @@ import newLogo from '@assets/new-logo.svg'
 import linkedinIco from '@assets/icon_footer_in.svg'
 import instagramIco from '@assets/icon_footer_insta.svg'
 import eletricProject from '@assets/eletric_project.jpg'
-
+import projectsBackGroundIMG from '@assets/eletric_project_banner.jpg'
 export const SVGs = {
   usa,
   brazil,
@@ -19,5 +19,6 @@ export const SVGs = {
   newLogo,
   linkedinIco,
   instagramIco,
-  eletricProject
+  eletricProject,
+  projectsBackGroundIMG
 }
