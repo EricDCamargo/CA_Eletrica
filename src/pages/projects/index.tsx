@@ -1,14 +1,17 @@
 import { SVGs } from '@src/assets'
 import Dropdown from '@src/components/dropDown'
-import ProjectCard from '@src/components/projectCard'
 import useWindowSize from '@src/shared/hooks/getWindowSize'
 import { ProjectCategory } from '@src/shared/utils/enums'
 import { mockProjects } from '@src/shared/utils/mocks'
 import { useState } from 'react'
 import styled from 'styled-components'
 
+import ProjectsModule from './routes/routes'
+import { useNavigate } from 'react-router-dom'
+
 const Projects = () => {
   const { projectsBackGroundIMG } = SVGs
+  const navigate = useNavigate()
   const { width } = useWindowSize()
   const projectsCategories = Object.values(ProjectCategory)
 
@@ -19,6 +22,12 @@ const Projects = () => {
         project => project.projectData.projectCategory === selectedCategory
       )
     : mockProjects
+
+  const handlechangeCategory = (category: string) => {
+    setSelectedCategory(category)
+    navigate(`/projects`)
+  }
+
   return (
     <ProjetosWrapper>
       <ProjectBackground backGroundIMG={projectsBackGroundIMG} />
@@ -27,14 +36,14 @@ const Projects = () => {
           {projectsCategories.map(category => (
             <FilterButton
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handlechangeCategory(category)}
               active={selectedCategory === category}
             >
               <p className="categoryName">{category}</p>
             </FilterButton>
           ))}
           <FilterButton
-            onClick={() => setSelectedCategory('')}
+            onClick={() => handlechangeCategory('')}
             active={selectedCategory === ''}
           >
             All
@@ -43,13 +52,11 @@ const Projects = () => {
       ) : (
         <Dropdown
           categories={projectsCategories}
-          onCategoryChange={setSelectedCategory}
+          onCategoryChange={handlechangeCategory}
           selectedCategory={selectedCategory}
         />
       )}
-      {filteredProjects.map((project, index) => (
-        <ProjectCard key={index} projectData={project.projectData} />
-      ))}
+      <ProjectsModule filteredProjects={filteredProjects} />
     </ProjetosWrapper>
   )
 }

@@ -1,25 +1,24 @@
+
 import { colors } from '@src/shared/themes/colors'
+import { ProjectCardProps } from '@src/shared/utils/types'
 import { FaCircleArrowRight } from 'react-icons/fa6'
+import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
 
-interface ProjectCardProps {
-  projectData: {
-    imageSrc: string
-    title: string
-    description: string
-    link: string
-  }
-}
-
 const ProjectCard = ({ projectData }: ProjectCardProps) => {
-  const { imageSrc, title, description, link } = projectData
+  const { projectId, imageSrc, title, description } = projectData
+  const navigate = useNavigate()
+
+  const handleMoreInfo = (id: string) => {
+    navigate(`/projects/${id}`)
+  }
   return (
     <ProjetosSection>
       <ProjectImage src={imageSrc} alt="Projeto" />
       <Intro>
         <Title>{title}</Title>
         <Description>{description}</Description>
-        <VerMaisLink href={link}>
+        <VerMaisLink onClick={() => handleMoreInfo(projectId)}>
           Ver mais
           <Icon>
             <FaCircleArrowRight size={22} />

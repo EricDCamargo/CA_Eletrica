@@ -12,3 +12,8 @@ export enum ProjectCategory {
   AGRICULTURAL = 'Agricultural',
   RESEARCH = 'Research'
 }
+
+export enum ProjectStatus {
+  COMPLETED = 'Projeto Concluído',
+  IN_PROGRESS = 'Projeto Em Progresso'
+}
